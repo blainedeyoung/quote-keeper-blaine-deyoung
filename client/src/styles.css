@@ -1,0 +1,85 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.loginScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: cornsilk;
+    height: 100vh;
+    width: 100vw;
+}
+
+.title {
+    font-size: 200%;
+    margin-bottom: 200px;
+    color: tomato;
+}
+
+.navbar {
+    height: 200px;
+    width: 100vw;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contentBody {
+    min-height: 800px;
+    width: 100vw;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+}
+
+.quotesDisplay {
+    min-height: 800px;
+    width: 100vw;
+    background-color: wheat;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow: scroll;
+}
+
+.quoteBlock {
+    background-color: aqua;
+    border: thin black solid;
+    padding: 20px;
+    height: 200px;
+}
+
+.attribution {
+    margin-top: 10px;
+}
+
+.formInputs {
+    display: block;
+    margin: 20px;
+}
+
+.formButtons {
+    display: block;
+    height: 30px;
+    width: 150px;
+    margin: 20px;
+}
+
+.userGreeting {
+    display: absolute;
+    height: 50px;
+    width: 100vw;
+    text-align: center;
+    background-color: beige;
+}
+
+.otherButton {
+    height: 30px;
+    width: 100px;
+    margin: 30px;
+}

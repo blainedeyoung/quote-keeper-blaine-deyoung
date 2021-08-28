@@ -1,3 +1,7 @@
+test login credentials:
+blainedeyoung 424242
+bd 1234
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

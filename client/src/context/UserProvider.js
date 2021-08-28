@@ -27,7 +27,7 @@ class UserProvider extends Component {
   //authorization functions
   signup = (credentials) => {
     axios
-      .post(`${process.env.REACT_APP_SERVER_API}/auth/signup`, credentials)
+      .post(`/auth/signup`, credentials)
       .then((res) => {
         const { user, token } = res.data;
         sessionStorage.setItem("user", JSON.stringify(user));
@@ -39,7 +39,7 @@ class UserProvider extends Component {
 
   login = (credentials) => {
     axios
-      .post(`${process.env.REACT_APP_SERVER_API}/auth/login`, credentials)
+      .post(`/auth/login`, credentials)
       .then((res) => {
         const { user, token } = res.data;
         sessionStorage.setItem("user", JSON.stringify(user));
@@ -70,7 +70,7 @@ class UserProvider extends Component {
       alert("the permissions field must be set to 'public' or 'private'");
     } else
       quoteAxios
-        .post(`${process.env.REACT_APP_SERVER_API}/api/quote`, newQuote)
+        .post(`/api/quote`, newQuote)
         .then((res) => {
           this.setState((prevState) => ({
             quotes: [...prevState.quotes, res.data],
@@ -81,7 +81,7 @@ class UserProvider extends Component {
 
   getUserQuotes = () => {
     quoteAxios
-      .get(`${process.env.REACT_APP_SERVER_API}/api/quote/user`)
+      .get(`/api/quote/user`)
       .then((res) => {
         this.setState({ quotes: res.data });
       })
@@ -90,7 +90,7 @@ class UserProvider extends Component {
 
   getAllQuotes = () => {
     quoteAxios
-      .get(`${process.env.REACT_APP_SERVER_API}/api/quote/`)
+      .get(`/api/quote/`)
       .then((res) => {
         this.setState({ quotes: res.data });
       })
@@ -99,7 +99,7 @@ class UserProvider extends Component {
 
   deleteQuote = (id) => {
     quoteAxios
-      .delete(`${process.env.REACT_APP_SERVER_API}/api/quote/${id}`)
+      .delete(`/api/quote/${id}`)
       .then((res) => {
         this.setState((prevState) => ({
           quotes: prevState.quotes.filter((quote) => quote._id !== id),
@@ -114,7 +114,7 @@ class UserProvider extends Component {
 
   editQuote = (id, updates) => {
     quoteAxios
-      .put(`${process.env.REACT_APP_SERVER_API}/api/quote/${id}`, updates)
+      .put(`/api/quote/${id}`, updates)
       .then((res) => {
         this.setState((prevState) => ({
           quotes: prevState.quotes.map((quote) =>
